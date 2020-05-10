@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ClassInit
+namespace JsonToClassInit
 {
     public class Sample
     {

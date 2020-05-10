@@ -1,4 +1,4 @@
-namespace ClassInit
+namespace JsonToClassInit
 {
     public class SampleDetail
     {

@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace ClassInit
+namespace JsonToClassInit
 {
     public class Program
     {
@@ -72,8 +72,8 @@ namespace ClassInit
             if (isCollection)
             {
                 var values = propertyInfo.GetValue(obj, null) as IEnumerable<string>;
-                var tmp = string.Join(",", values.Select(p => { return $"\"{p}\""; }));
-                var collectionResult = $"new List<{propertyInfo.PropertyType.GetGenericTypeDefinition()}>{{ {tmp} }},";
+                var tmp = string.Join(", ", values.Select(p => { return $"\"{p}\""; }));
+                var collectionResult = $"new List<{propertyInfo.PropertyType.GetGenericArguments().First().ToString().Replace("System.", "").ToLower()}>{{ {tmp} }},";
                 return collectionResult;
             }
 

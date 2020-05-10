@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using System.Reflection;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace ClassInit.Test
+namespace JsonToClassInit.Test
 {
     public class Tests
     {
@@ -43,7 +42,7 @@ namespace ClassInit.Test
         public void PropertyInfo_Is_String_Non_Collection()
         {
             var propertyInfo = _data.GetType().GetProperty("Name");
-            var actual = ClassInit.Program.GeneratorInitStringForString(_data, propertyInfo, false);
+            var actual = Program.GeneratorInitStringForString(_data, propertyInfo, false);
             var expected = "Name = \"JamisLiao\",";
             actual.Should().Be(expected);
         }
@@ -53,7 +52,16 @@ namespace ClassInit.Test
         {
             var propertyInfo = _data.GetType().GetProperty("NickNames");
             var actual = Program.GeneratorInitStringForString(_data, propertyInfo, true);
-            var expected = "NickNames = new List<string>{ \"Test\", \"123\"},";
+            var expected = "new List<string>{ \"Test\", \"123\" },";
+            actual.Should().Be(expected);
+        }
+
+        [Test]
+        public void PropertyInfo_Is_Class_Is_Collection()
+        {
+            var propertyInfo = _data.GetType().GetProperty("Detail");
+            var actual = Program.GeneratorInitStringForString(_data, propertyInfo, true);
+            var expected = "new List<SampleDetail>{\"Address\":\"TestAddress\",\"Email\":\"jamisliao@gmail.com\"},{\"Address\":\"Test2Address\",\"Email\":\"jamisliao2@gmail.com\"}},";
             actual.Should().Be(expected);
         }
     }
