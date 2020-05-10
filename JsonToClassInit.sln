@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToClassInit", "src\JsonToClassInit\JsonToClassInit.csproj", "{35136430-A65C-440B-86E7-2283FD865A96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToClassInit.Test", "test\JsonToClassInit.Test\JsonToClassInit.Test.csproj", "{668E68C0-3A21-4398-8864-EC27E199A378}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35136430-A65C-440B-86E7-2283FD865A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35136430-A65C-440B-86E7-2283FD865A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35136430-A65C-440B-86E7-2283FD865A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35136430-A65C-440B-86E7-2283FD865A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{668E68C0-3A21-4398-8864-EC27E199A378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{668E68C0-3A21-4398-8864-EC27E199A378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{668E68C0-3A21-4398-8864-EC27E199A378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{668E68C0-3A21-4398-8864-EC27E199A378}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
